@@ -27,11 +27,11 @@ with open("{path}/{filename}".format(path = path,filename = fname)) as f:
                     capone_tag = {}
                     for i in range(len(key_parts)):
                         capone_tag["{}".format(i)] = key_parts[i]
-                        capone_tags.append(capone_tag)    
+                    capone_tags.append(capone_tag)    
             else:
                 url_keys[parts] += 1
         j += 1
 
 df = pd.DataFrame(capone_tags)
 df.sort(columns=['0','1','2','3','4','5'],inplace = True)
-#df.to_csv('website_summary.csv')
+df.to_csv('website_summary.csv')
